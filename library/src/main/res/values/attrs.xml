@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MoreTextView">
+
+        <attr name="minLine" format="integer"/>
+
+        <attr name="moreTextColor" format="color"/>
+        <attr name="moreSwitchTextColor" format="color"/>
+
+        <attr name="moreTextSize" format="dimension"/>
+        <attr name="moreSwitchTextSize" format="dimension"/>
+
+        <attr name="moreSwitchDrawable" format="reference"/>
+
+
+
+    </declare-styleable>
+
+
+
+</resources>
