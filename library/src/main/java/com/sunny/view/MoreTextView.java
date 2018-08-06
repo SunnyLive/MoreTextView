@@ -35,6 +35,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -50,9 +51,9 @@ import demo.sunny.com.mylibrary.R;
 public class MoreTextView extends LinearLayout implements CompoundButton.OnCheckedChangeListener,ViewTreeObserver.OnPreDrawListener{
 
 
-    private float mMoreSwitchTextSize = 12f;
+    private int mMoreSwitchTextSize = 12;
 
-    private float mMoreTextSize = 12f;
+    private int mMoreTextSize = 12;
 
     private int mMoreTextColor = Color.parseColor("#3c3c40");
 
@@ -88,8 +89,8 @@ public class MoreTextView extends LinearLayout implements CompoundButton.OnCheck
         mMoreSwitchTextColor = attributes.getColor(R.styleable.MoreTextView_moreSwitchTextColor, mMoreSwitchTextColor);
         mMoreTextColor = attributes.getColor(R.styleable.MoreTextView_moreTextColor,mMoreTextColor);
         mMinLine = attributes.getInt(R.styleable.MoreTextView_minLine, mMinLine);
-        mMoreTextSize = attributes.getDimension(R.styleable.MoreTextView_moreTextSize, mMoreTextSize);
-        mMoreSwitchTextSize = attributes.getDimension(R.styleable.MoreTextView_moreSwitchTextSize, mMoreSwitchTextSize);
+        mMoreTextSize = attributes.getDimensionPixelSize(R.styleable.MoreTextView_moreTextSize, mMoreTextSize);
+        mMoreSwitchTextSize = attributes.getDimensionPixelSize(R.styleable.MoreTextView_moreSwitchTextSize, mMoreSwitchTextSize);
         mMoreSwitchDrawable = attributes.getDrawable(R.styleable.MoreTextView_moreSwitchDrawable);
         attributes.recycle();
         init();
@@ -104,9 +105,9 @@ public class MoreTextView extends LinearLayout implements CompoundButton.OnCheck
         mCheckBox = inflate.findViewById(R.id.cb_more_checked);
         mTextView.setMinLines(mMinLine);
         mTextView.setTextColor(mMoreTextColor);
-        mTextView.setTextSize(mMoreTextSize);
+        mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,mMoreTextSize);
         mCheckBox.setTextColor(mMoreSwitchTextColor);
-        mCheckBox.setTextSize(mMoreSwitchTextSize);
+        mCheckBox.setTextSize(TypedValue.COMPLEX_UNIT_PX,mMoreSwitchTextSize);
         setSwitchDrawable(mMoreSwitchDrawable);
         mTextView.getViewTreeObserver().addOnPreDrawListener(this);
     }

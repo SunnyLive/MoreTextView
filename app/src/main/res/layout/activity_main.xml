@@ -11,11 +11,11 @@
         android:id="@+id/more"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         app:moreSwitchDrawable="@drawable/more"
-        app:moreSwitchTextSize="15sp"
-        app:moreTextSize="12sp"
+        app:moreTextSize="22sp"
         app:moreSwitchTextColor="@color/colorAccent"
-        app:moreTextColor="@color/colorPrimaryDark"
+        app:moreTextColor="#3c3c40"
         />
 
 </ScrollView>
